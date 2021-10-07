@@ -9,23 +9,25 @@ Group CPS - Health and Wellbeing
 <td> 
  </tr></table>
  
- Click [HERE] to watch our visual presentation as part of the ANU School of Cybernetics 'Born Digital' demonstration day.
+ Click [HERE] to watch our visual presentation for the ANU School of Cybernetics 'Born Digital' demonstration day.
 
-What CPS have we designed and developed?
+### What CPS have we designed and developed?
 
-What motivated us to design and develop this CPS?
+### What motivated us to design and develop this CPS?
 
-What tools did we use?
+### What tools did we use?
 
-What challenges did we face — and overcome — throughout the design and development process? 
+### What challenges did we face — and overcome — throughout the design and development process? 
 
-What new skills have we gained? 
+### What new skills have we gained? 
 
-What new ideas/ thoughts/ reflections offer insights for the NBE?
+### What new ideas/ thoughts/ reflections offer insights for the NBE?
 
-What could we have done differently? (i.e., how can you learn from our mistakes?)
+### What could we have done differently? (i.e., how can you learn from our mistakes?)
 
-What next? 
+### What next? 
+
+# Interacting with the Artwork
 
 # Acknowledgements
 
