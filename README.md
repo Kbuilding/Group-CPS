@@ -1,5 +1,4 @@
-# Group-CPS
-Group CPS - Health and Wellbeing 
+# CPS Project - Health and Wellbeing Group 
 
 **Team:** [James Liu](https://github.com/tamejames), [Sarah O'Connor](https://github.com/SarahEOConnor), [Kate Tollenaar](https://github.com/Kbuilding) and [Erika Ly]. 
 
