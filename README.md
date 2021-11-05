@@ -57,7 +57,7 @@ Do Differently (related to challenge 1): Take the time in the early stages to un
 
 # Acknowledgements
 
-We thank Dr Mina Henein for his support, guidance and patience over the course of CPS Project. At every stage, Dr Henein was there to offer help, answer questions, source resources and materials and motivate us.  
+We thank Dr Mina Henein for his support, guidance and patience over the course of CPS Project. At every stage, Dr Henein was there to offer help, answer questions, source resources and materials and most of all, motivate us.  
 
 Dr Xuanying Zhu
 
