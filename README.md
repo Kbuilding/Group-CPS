@@ -8,6 +8,9 @@
 <td> <img src="https://github.com/Kbuilding/Group-CPS/blob/master/images/art_beat.png" width="500" height="500" border="10" /></a> </td>
  </tr></table>
  
+ 
+![Poster for Demo day. Purple background. Artbeat, the name of the CPS, written in white with a heart beat trailing off the t.](https://github.com/Kbuilding/Group-CPS/blob/master/images/art_beat.png "Demo Day Poster")
+ 
 Click [HERE] to watch our visual presentation for the ANU School of Cybernetics 'Born Digital' demonstration day.
 
 ### What CPS have we designed and developed?
