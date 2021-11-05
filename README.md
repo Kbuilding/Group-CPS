@@ -5,7 +5,7 @@
 # Cybernetics + Public Art 
 
 <table><tr>
-<td> <img src="https://github.com/Kbuilding/Group-CPS/blob/master/images/art_beat.png" alt="ART-BEAT" width="340" height="260" border="10" /></a> </td>
+<td> <img src="https://github.com/Kbuilding/Group-CPS/blob/master/images/art_beat.png" width="540" height="260" border="10" /></a> </td>
  </tr></table>
  
 Click [HERE] to watch our visual presentation for the ANU School of Cybernetics 'Born Digital' demonstration day.
