@@ -5,7 +5,7 @@
 # Cybernetics + Public Art 
 
 <table><tr>
-<td> <img src="https://github.com/Kbuilding/Group-CPS/blob/master/images/art_beat.png" alt="Poster for Demo day. Purple background. artBeat, the name of the CPS, written in white with a heart beat trailing off the t." width="500" height="500" border="10" /></a> </td>
+<td> <img src="https://github.com/Kbuilding/Group-CPS/blob/main/images/art_beat.png?raw=true" alt="Poster for Demo day. Purple background. artBeat, the name of the CPS, written in white with a heart beat trailing off the t." width="500" height="500" border="10" /></a> </td>
  </tr></table>
  
 Click [HERE] to watch our visual presentation for the ANU School of Cybernetics 'Born Digital' demonstration day.
@@ -17,7 +17,7 @@ This project is a web application that uses the human heartbeat to illuminate an
 > The visualisation shows one side of the world as 'busier' than the other to represent the different timezones. While one side of the world slows down, the other speeds up. 
 
 <table><tr>
-<td> <img src="https://github.com/Kbuilding/Group-CPS/blob/master/images/visualisation_test.png" width="500" height="500" border="10" /></a> </td>
+<td> <img src="https://github.com/Kbuilding/Group-CPS/blob/main/images/visualisation_test.png?raw=true" width="500" height="500" border="10" /></a> </td>
  </tr></table>
 
 ### What motivated us to design and develop this CPS?
