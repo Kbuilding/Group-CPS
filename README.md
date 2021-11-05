@@ -14,6 +14,10 @@ Click [HERE] to watch our visual presentation for the ANU School of Cybernetics 
 
 This project is a web application that uses the human heartbeat to illuminate an outline of the world as an artpiece. Users can upload their heartbeat data from a wearable (at this stage, an Empatica 4) which personalises their visual experiences. The project is a web-based application, the project can be implemented by anyone who has access to a device and a wearable. In today’s noisy, complex, and often distracted world, we wanted to offer people a mindful moment – to explore something new, inspire a sense of awe, wonder and presence, as well as a sense of connection with others.  
 
+<table><tr>
+<td> <img src="https://github.com/Kbuilding/Group-CPS/blob/master/images/visualisation_test.png" width="500" height="500" border="10" /></a> </td>
+ </tr></table>
+
 ### What motivated us to design and develop this CPS?
 
 ### What tools did we use?
