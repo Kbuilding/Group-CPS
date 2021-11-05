@@ -71,5 +71,4 @@ Memunat Ibrahim
 
 The 2021 Master of Applied Cybernetics cohort. 
 
-The format for this README.md is adapted from the [VDO-SLAM: A Visual Dynamic Object-aware SLAM System] (https://github.com/halajun/VDO_SLAM) project page, which was offered as an example of a well-documented repository. 
-
+The format for this README.md has been adapted from the [VDO-SLAM: A Visual Dynamic Object-aware SLAM System](https://github.com/halajun/VDO_SLAM) project page repository. 
