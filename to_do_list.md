@@ -3,3 +3,5 @@
 - [ ] Document the difference in the data with and without the filter (i.e., images, averages).  
 - [ ] Get a value for the heart rate using the filter and send through to James. 
 - [ ] Signpost in the P5.js code the timezones for the different countries (i.e., //night (7) or //day (2)). 
+- [ ] The visualisation of Australia should note what part of Indigenous Land you are on, offering a prompt to reflect on your place within Australia. 
+
