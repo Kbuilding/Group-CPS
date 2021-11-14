@@ -8,23 +8,23 @@ import os # The OS module provides functions for interacting with the operating 
 
 E4_folder = './E4_data/'
 
-eda_path = E4_folder + 'EDA_XZ.csv' # eda_path creates a pathway for the electrodermal activity data, noting that you get the data via the cps_project folder 
+hr_path = E4_folder + 'HR.csv' # hr_path creates a pathway for the HR data, noting that you get the data via the data folder 
 
-# hr_path = E4_folder + 'HR_XZ.csv' 
+# hr_path = E4_folder + 'HR.csv' 
 
-eda_df = pd.read_csv(eda_path, header=None) # Ask XY what she means by 'eda_df' (i.e., does 'df' denote data file?) and about header=None. Pandas is used to read the csv file. 
+hr_df = pd.read_csv(hr_path, header=None) # Ask XY what she means by 'hr_df' (i.e., does 'df' denote data file?) and about header=None. Pandas is used to read the csv file. 
 
 # hr_df = pd.read_csv(hr_path, header=None)
 
-eda_start_epoch = eda_df[0][0] # Ask Robin about epoch time 
+hr_start_epoch = hr_df[0][0] # Ask Robin about epoch time 
 
-eda_hz = eda_df[0][1] # Ask Robin about sampling rate. 'hz' refers to hertz.
+hr_hz = hr_df[0][1] # Ask Robin about sampling rate. 'hz' refers to hertz.
 
-eda_values = eda_df[0][2:] # Ask Robin about eda recording 
+hr_values = hr_df[0][2:] # Ask Robin about hr recording 
 
-eda_values.index = eda_start_epoch + (eda_values.index - 2) / eda_hz #XZ provided code that could convert eda index to epoch, which she noted would be useful when segmenting eda data by timestamps 
+hr_values.index = hr_start_epoch + (hr_values.index - 2) / hr_hz #XZ provided code that could convert hr index to epoch, which she noted would be useful when segmenting hr data by timestamps 
 
-plt.plot(eda_values.index, eda_values) # This plots the original EDA (How can I see the plot?)
+plt.plot(hr_values.index, hr_values) # This plots the original HR 
 
 """Noise in the data (i.e., unexpected peaks), likely caused by the natural movements of the participants, requires filtering and normalisation """
 
@@ -75,19 +75,18 @@ def butter_lowpass(lowcut, sample_rate, order=6): # standard lowpass filter
     b, a = signal.butter(order, low_cutoff, btype='low', analog=False)
     return b, a 
 
-"""def butter_highpass(cuttoff, sample_rate, order=2): # standard highpass filter 
+def butter_highpass(cuttoff, sample_rate, order=2): # standard highpass filter 
         nyq = 0.5 * sample_rate
         normal_cutoff = cutoff /nyq
-        b, a = butter(order, normal_cutoff, bytpe='high', analog=False)
+        b, a = butter(order, normal_cutoff, btype='high', analog=False)
         return b, a
         
-    def butter_bandpass(lowcut, highcut, sample_rate, order=2): # standard bandpass filter, which filters out frequencies outside the frequency range defined by [lowcut, highcut]
+def butter_bandpass(lowcut, highcut, sample_rate, order=2): # standard bandpass filter, which filters out frequencies outside the frequency range defined by [lowcut, highcut]
         nyq = 0.5 * sample_rate
         low = lowcut / nyq
         high = highcut / nyq
         b, a = butter(order, [low, high], btype='band')
         return b, a
-        """
 
 def butter_lowpass_filter(data, lowcut, sample_rate, order=6):
 
