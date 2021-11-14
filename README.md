@@ -24,6 +24,8 @@ As the Health and Wellbeing team, we wanted to lean into the idea that health is
 <td> <img src="https://github.com/Kbuilding/Group-CPS/blob/main/images/visualisation_test.png?raw=true" width="500" height="500" border="10" /></a> </td>
  </tr></table>
 
+# Interacting with the Artwork
+
 ### What tools did we use?
 
 - Empatic E4 Wristband
@@ -44,10 +46,6 @@ As the Health and Wellbeing team, we wanted to lean into the idea that health is
 - Collaborative coding 
 - P5.js
 - Storyboarding 
-
-### What next? 
-
-# Interacting with the Artwork
 
 # Acknowledgements
 
