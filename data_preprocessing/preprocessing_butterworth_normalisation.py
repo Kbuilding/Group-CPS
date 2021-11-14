@@ -8,23 +8,21 @@ import os
 #  [Step 1: Import the data]
 E4_folder = './E4_data/'
 
-eda_path = E4_folder + 'EDA_XZ.csv' # eda_path creates a pathway for the electrodermal activity data, noting that you get the data via the cps_project folder 
+hr_path = E4_folder + 'HR.csv' # hr_path creates a pathway for the electrodermal activity data, noting that you get the data via the cps_project folder 
 
-# hr_path = E4_folder + 'HR_XZ.csv' 
-
-eda_df = pd.read_csv(eda_path, header=None) # Ask XY what she means by 'eda_df' (i.e., does 'df' denote data file?) and about header=None. Pandas is used to read the csv file. 
+hr_df = pd.read_csv(hr_path, header=None) # Ask XY what she means by 'eda_df' (i.e., does 'df' denote data file?) and about header=None. Pandas is used to read the csv file. 
 
 # hr_df = pd.read_csv(hr_path, header=None)
 
-eda_start_epoch = eda_df[0][0] # Ask Robin about epoch time 
+hr_start_epoch = hr_df[0][0] # Ask Robin about epoch time 
 
-eda_hz = eda_df[0][1] # Ask Robin about sampling rate. 'hz' refers to hertz.
+hr_hz = hr_df[0][1] # Ask Robin about sampling rate. 'hz' refers to hertz.
 
-eda_values = eda_df[0][2:] # Ask Robin about eda recording 
+hr_values = hr_df[0][2:] # Ask Robin about eda recording 
 
-eda_values.index = eda_start_epoch + (eda_values.index - 2) / eda_hz #XZ provided code that could convert eda index to epoch, which she noted would be useful when segmenting eda data by timestamps 
+hr_values.index = hr_start_epoch + (hr_values.index - 2) / hr_hz #XZ provided code that could convert eda index to epoch, which she noted would be useful when segmenting eda data by timestamps 
 
-plt.plot(eda_values.index, eda_values) # This plots the original EDA 
+plt.plot(hr_values.index, hr_values) # This plots the original hr 
 
 # [Step 2: Remove noise using the lowpass Butterworth filter]
 # Apply the Butterworth filter
@@ -42,38 +40,38 @@ def butter_lowpass_filter(data, lowcut, sample_rate, order=6):
 
     return y 
 
-eda_filtered_lp = butter_lowpass_filter(eda_values, 1, eda_hz, 6)
+hr_filtered_lp = butter_lowpass_filter(hr_values, 1, hr_hz, 6)
 
-# constructs a pandas dataframe for the filtered eda data to be stored
+# constructs a pandas dataframe for the filtered hr data to be stored
 
-eda_filtered_df = pd.DataFrame(index=eda_values.index)
-eda_filtered_df['filtered_eda'] = eda_filtered_lp
+hr_filtered_df = pd.DataFrame(index=hr_values.index)
+hr_filtered_df['filtered_hr'] = hr_filtered_lp
 
-"""# Create a plot graph of the two datasets to compare the original EDA data and filtered EDA data
+"""# Create a plot graph of the two datasets to compare the original hr data and filtered hr data
 
 # Define a space of two rows 
 fig, axs = plt.subplots(2) 
 
 # Assign titles to the graphs 
-axs[0].title.set_text('Original EDA')
-axs[1].title.set_text('Filtered EDA') 
+axs[0].title.set_text('Original hr')
+axs[1].title.set_text('Filtered hr') 
 
 # Plot the curves 
-# print("eda_values.index: ", eda_values.index) # array of float; data type = float 64; length=8784
-axs[0].plot(eda_values.index, eda_values.values)
-axs[1].plot(eda_filtered_df.index, eda_filtered_lp) # *What is eda_filtered_df.index refers to the pandas dataframe where the filtered data is stored. 
-#axs[1].plot(eda_values.index, eda_filtered_lp)
+# print("hr_values.index: ", hr_values.index) # array of float; data type = float 64; length=8784
+axs[0].plot(hr_values.index, hr_values.values)
+axs[1].plot(hr_filtered_df.index, hr_filtered_lp) # *What is hr_filtered_df.index refers to the pandas dataframe where the filtered data is stored. 
+#axs[1].plot(hr_values.index, hr_filtered_lp)
 
 # Format the two graphs to ensure that they don't overlap
 plt.tight_layout()
 
 plt.show() # display function """
 
-# [Step 3: Normalise the EDA data] 
+# [Step 3: Normalise the hr data] 
 
 # Physiological signals are subject-dependent (specific to the participant), which means the standard practice is to scale the data into a standard range. Normalisation can also assist with hiding personal information from body signals. There are two main normalisation methods: 
-# (1) Min-max normalisation: calculated as (EDA - min)(max - min)
-# (2) standardisation: calculated as (EDA - mean)/standard_deviation 
+# (1) Min-max normalisation: calculated as (hr - min)(max - min)
+# (2) standardisation: calculated as (hr - mean)/standard_deviation 
 
 "Min-max normalisation & standardisation normalisation" 
 def min_max_normalisation(data): # (x - x.min) / (x.max - x.min)
@@ -88,32 +86,31 @@ def min_max_normalisation(data): # (x - x.min) / (x.max - x.min)
 
 
 # Scale using min-max normalisation 
-eda_norm = min_max_normalisation(eda_filtered_df['filtered_eda'].values) # not defined
+hr_norm = min_max_normalisation(hr_filtered_df['filtered_hr'].values) # not defined
 
 
-# constructs a pandas dataframe for the normalised eda data to be stored
+# constructs a pandas dataframe for the normalised hr data to be stored
 
-eda_filtered_df['scaled_eda'] = eda_norm
+hr_filtered_df['scaled_hr'] = hr_norm
 
 
-# [Step 4: Create a plot graph to show original EDA, filtered EDA and scaled EDA]
+# [Step 4: Create a plot graph to show original hr, filtered hr and scaled hr]
 
 # Define a space of three rows 
 fig, axs = plt.subplots(3) 
 
 # Assign titles to the graphs 
-axs[0].title.set_text('Original EDA')
-axs[1].title.set_text('Butterworth Lowpass Filtered EDA') 
-axs[2].title.set_text('Normalised EDA')
+axs[0].title.set_text('Original HR')
+axs[1].title.set_text('Butterworth Lowpass Filtered HR') 
+axs[2].title.set_text('Normalised HR')
 
 # Plot the curves 
-axs[0].plot(eda_values.index, eda_values.values)
-axs[1].plot(eda_filtered_df.index, eda_filtered_lp) #eda_filtered_df.index not defined 
-axs[2].plot(eda_filtered_df.index, eda_filtered_df['scaled_eda'])
+axs[0].plot(hr_values.index, hr_values.values)
+axs[1].plot(hr_filtered_df.index, hr_filtered_lp) #hr_filtered_df.index not defined 
+axs[2].plot(hr_filtered_df.index, hr_filtered_df['scaled_hr'])
 
 # Format the three graphs to ensure that they don't overlap
 plt.tight_layout()
 
 # Display output 
 plt.show()
-
