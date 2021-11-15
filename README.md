@@ -66,19 +66,23 @@ The format for this README.md has been adapted from the [VDO-SLAM: A Visual Dyna
 # Resources 
 
 ## Libraries
-SciPy (Scientific and technical computing library for Python) https://scipy.org 
-Scikit-learn (Machine learning library for Python) github.com/scikit-learn/scikit-learn 
-NumPy (Numerical manipulation library for Python) https://numpy.org 
-Matplotlib (Plotting library for Python) https://matplotlib.org
-Pandas (Data manipulation and analysis library for Python) https://pandas.pydata.org
-Heartpy (Heart rate analysis toolkit for Python) heartpy
+- SciPy (Scientific and technical computing library for Python) https://scipy.org 
+- Scikit-learn (Machine learning library for Python) github.com/scikit-learn/scikit-learn 
+- NumPy (Numerical manipulation library for Python) https://numpy.org 
+- Matplotlib (Plotting library for Python) https://matplotlib.org
+- Pandas (Data manipulation and analysis library for Python) https://pandas.pydata.org
+- Heartpy (Heart rate analysis toolkit for Python) heartpy
 
 ## GitHub Repositories 
 
 [empatica_e4_data_stream](https://github.com/petteska/Empatica_e4_data_stream)
+
 [empatica_e4_processing_pipeline](https://github.com/Przemekeke/empatica_e4_processing_pipeline) 
+
 [EmpaticaBiophysicalSync](https://github.com/Ev4ngelos/EmpaticaBiophysicalSync) 
+
 [empaticaHRV](https://github.com/Jegama/empaticaHRV) 
+
 [heartrate_analysis_python](https://github.com/paulvangentcom/heartrate_analysis_python) 
 
 ## Publications
