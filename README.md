@@ -71,6 +71,10 @@ The format for this README.md has been adapted from the [VDO-SLAM: A Visual Dyna
 
 # Resources 
 
+## Images 
+
+Randal Munroe (n.d.) Machine Learning. https://xkcd.com/1838/ 
+
 ## Libraries
 - SciPy (Scientific and technical computing library for Python) https://scipy.org 
 - Scikit-learn (Machine learning library for Python) github.com/scikit-learn/scikit-learn 
