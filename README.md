@@ -49,7 +49,7 @@ As the Health and Wellbeing team, we wanted to lean into the idea that health is
 
 # Acknowledgements
 
-Throughout this process we have received support from both staff and students.  At every stage, Dr Mina Henein has been there to offer help, answer questions, source resources and materials, and most of all, motivate us. We are grateful for his support, guidance and patience over the course of the CPS project. Dr Xuanying Zhu has also been a significant source of information, guidance and support, and she was instrumental in helping us with our AI component, providing code for both the filtering and the normalisation of the data.  
+Throughout this process we have received support from both staff and students.  At every stage, [Dr Mina Henein](https://github.com/MinaHenein?tab=repositories) has been there to offer help, answer questions, source resources and materials, and most of all, motivate us. We are grateful for his support, guidance and patience over the course of the CPS project. Dr Xuanying Zhu has also been a significant source of information, guidance and support, and she was instrumental in helping us with our AI component, providing code for both the filtering and the normalisation of the data.  
 
 We also received support from both our tutors, Matthew and Memunat, who offered incredibly useful advice, particularly around project management, having both been through the same process as part of the 2019 and 2020 cohorts respectively.  
 
