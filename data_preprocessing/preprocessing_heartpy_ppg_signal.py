@@ -8,26 +8,32 @@ from sklearn import preprocessing
 import matplotlib.pyplot as plt 
 import os 
 
-# E4_folder = './E4_data/'
+E4_folder = './E4_data/'
 
-# BVP.csv is the output data from the photoplethysmograph.
+bvp_path = E4_folder + 'BVP.csv' # bvp_path creates a pathway for the BVP data, noting that you get the data via the E4_data folder 
 
-# bvp_path = E4_folder + 'BVP.csv' # bvp_path creates a pathway for the BVP data, noting that you get the data via the E4_data folder 
+bvp_df = pd.read_csv(bvp_path, header=None)
 
-# bvp_df = pd.read_csv(bvp_path, header=None) 
+bvp_start_epoch = bvp_df[0][0]
 
-data = hp.get_data('BVP.csv')
+bvp_hz = bvp_df[0][1] # Ask Robin about sampling rate. 'hz' refers to hertz.
 
-"""
+bvp_values = bvp_df[0][2:]
+
+bvp_values.index = bvp_start_epoch + (bvp_values.index - 2) / bvp_hz
+
+# plt.plot(bvp_values.index, bvp_values) # This plots the original bvp
+
 # first let's load the clean PPG signal
-data, timer = bvp_path(0)
-# hp.load_exampledata(0)
+#data, timer = bvp_path(0) # removed , timer
 
 # to visualise the data
 plt.figure(figsize=(12,4)) 
-plt.plot(data)
+plt.plot(bvp_values.index, bvp_values)
 plt.show()
 
+
+"""
 # run the analysis
 wd, m = hp.process(data, sample_rate = 100.0)  # wd = working data, m = measures
 
@@ -88,4 +94,4 @@ hp.plotter(wd, m)
 #display measures computed
 for measure in m.keys():
     print('%s: %f' %(measure, m[measure]))
-    """
+"""

@@ -8,19 +8,19 @@ import os
 
 E4_folder = './E4_data/'
 
-hr_path = E4_folder + 'HR.csv' # hr_path creates a pathway for the HR data, noting that you get the data via the cps_project folder 
+bvp_path = E4_folder + 'BVP.csv' # bvp_path creates a pathway for the BVP data, noting that you get the data via the cps_project folder 
 
-hr_df = pd.read_csv(hr_path, header=None) # 'df' denotes data file and Pandas is used to read the csv file. 
+bvp_df = pd.read_csv(bvp_path, header=None) # 'df' denotes data file and Pandas is used to read the csv file. 
 
-hr_start_epoch = hr_df[0][0] # Ask Robin about epoch time 
+bvp_start_epoch = bvp_df[0][0] # epoch time 
 
-hr_hz = hr_df[0][1] # Ask Robin about sampling rate. 'hz' refers to hertz.
+bvp_hz = bvp_df[0][1] # 'hz' refers to hertz.
 
-hr_values = hr_df[0][2:]
+bvp_values = bvp_df[0][2:]
 
-hr_values.index = hr_start_epoch + (hr_values.index - 2) / hr_hz #XZ provided code that could convert hr index to epoch, which she noted would be useful when segmenting hr data by timestamps 
+bvp_values.index = bvp_start_epoch + (bvp_values.index - 2) / bvp_hz #XZ provided code that could convert bvp index to epoch, which she noted would be useful when segmenting bvp data by timestamps 
 
-plt.plot(hr_values.index, hr_values) # This plots the original HR
+plt.plot(bvp_values.index, bvp_values) # This plots the original BVP
 
 # [Step 2: Remove noise using the median filter] 
 def median_filter(data, window_length=11): # Median filter is used to remove noise 
@@ -34,34 +34,34 @@ def median_filter(data, window_length=11): # Median filter is used to remove noi
      """
    
 # Apply the median filter (used to reduce noise in the signal)
-hr_filtered_median = median_filter(hr_values, 31) 
+bvp_filtered_median = median_filter(bvp_values, 31) 
 
 # constructs a pandas dataframe for the filtered hr data to be stored
 
-hr_filtered_df = pd.DataFrame(index=hr_values.index)
-hr_filtered_df['filtered_hr'] = hr_filtered_median 
+bvp_filtered_df = pd.DataFrame(index=bvp_values.index)
+bvp_filtered_df['filtered_bvp'] = bvp_filtered_median 
 
-"""# Create a plot graph of the two datasets to compare the original hr data and filtered hr data
+"""# Create a plot graph of the two datasets to compare the original BVP data and filtered BVP data
 
 # Define a space of two rows 
 fig, axs = plt.subplots(2) 
 
 # Assign titles to the graphs 
-axs[0].title.set_text('Original HR')
-axs[1].title.set_text('Filtered HR') 
+axs[0].title.set_text('Original BVP')
+axs[1].title.set_text('Filtered BVP') 
 
 # Plot the curves 
-axs[0].plot(hr_values.index, hr_values.values)
-axs[1].plot(hr_filtered_df.index, hr_filtered_median) #hr_filtered_df.index not defined 
+axs[0].plot(bvp_values.index, bvp_values.values)
+axs[1].plot(bvp_filtered_df.index, bvp_filtered_median) #bvp_filtered_df.index not defined 
 
 # Format the two graphs to ensure that they don't overlap
 plt.tight_layout()"""
 
-# [Step 3: Normalise the HR data] 
+# [Step 3: Normalise the BVP data] 
 
 # Physiological signals are subject-dependent (specific to the participant), which means the standard practice is to scale the data into a standard range. Normalisation can also assist with hiding personal information from body signals. There are two main normalisation methods: 
-# (1) Min-max normalisation: calculated as (HR - min)(max - min)
-# (2) standardisation: calculated as (HR - mean)/standard_deviation 
+# (1) Min-max normalisation: calculated as (BVP - min)(max - min)
+# (2) standardisation: calculated as (BVP - mean)/standard_deviation 
 
 "Min-max normalisation & standardisation normalisation" 
 def min_max_normalisation(data): # (x - x.min) / (x.max - x.min)
@@ -76,27 +76,27 @@ def min_max_normalisation(data): # (x - x.min) / (x.max - x.min)
 
 
 # Scale using min-max normalisation 
-hr_norm = min_max_normalisation(hr_filtered_df['filtered_hr'].values) # not defined
+bvp_norm = min_max_normalisation(bvp_filtered_df['filtered_bvp'].values) # not defined
 
 
-# constructs a pandas dataframe for the normalised hr data to be stored
+# constructs a pandas dataframe for the normalised bvp data to be stored
 
-hr_filtered_df['scaled_hr'] = hr_norm
+bvp_filtered_df['scaled_bvp'] = bvp_norm
 
-# [Step 4: Create a plot graph to show original HR, filtered HR and scaled HR]
+# [Step 4: Create a plot graph to show original BVP, filtered BVP and scaled BVP]
 
 # Define a space of three rows 
 fig, axs = plt.subplots(3) 
 
 # Assign titles to the graphs 
-axs[0].title.set_text('Original HR')
-axs[1].title.set_text('Median Filtered HR') 
-axs[2].title.set_text('Normalised HR')
+axs[0].title.set_text('Original BVP')
+axs[1].title.set_text('Median Filtered BVP') 
+axs[2].title.set_text('Normalised BVP')
 
 # Plot the curves 
-axs[0].plot(hr_values.index, hr_values.values)
-axs[1].plot(hr_filtered_df.index, hr_filtered_median) #hr_filtered_df.index not defined 
-axs[2].plot(hr_filtered_df.index, hr_filtered_df['scaled_hr'])
+axs[0].plot(bvp_values.index, bvp_values.values)
+axs[1].plot(bvp_filtered_df.index, bvp_filtered_median) #bvp_filtered_df.index not defined 
+axs[2].plot(bvp_filtered_df.index, bvp_filtered_df['scaled_bvp'])
 
 # Format the three graphs to ensure that they don't overlap
 plt.tight_layout()
