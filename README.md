@@ -12,7 +12,12 @@ Click [HERE](https://3ainstitute.org/demo-day-2021) to watch our visual presenta
 
 ### What CPS have we designed and developed?
 
-We have created a web-based interface that, when synced with a wearable device equipped with a PPG sensor (Blood Volume Pulse), visualises the user’s heartbeat as the heartbeat of where they are situated in the world. The reason for using this visualisation is to illustrate/ demonstrate that we are all part of the world’s heartbeat/ create a sense of global community. 
+We have created a web-based interface that, when synced with a wearable device equipped with a PPG sensor (Blood Volume Pulse) (See Figure 1 below), visualises the user’s heartbeat as the heartbeat of where they are situated in the world. The reason for using this visualisation is to illustrate/ demonstrate that we are all part of the world’s heartbeat/ create a sense of global community. 
+
+Figure 1: Visualisation of Blood Volume Pulse (BVP).
+<table><tr>
+<td> <img src="images/Figure_1_bvp.png" alt="Visualisation of Blood Volume Pulse(BVP)." width="800" height="400" border="10" /></a> </td>
+ </tr></table>
 
 The CPS, aptly named artBeat, works by using two key pieces of information (i) heartbeat data uploaded by users, which has typically been measured using a wearable device equipped with a PPG sensor and (ii) the country that the user associates their heartbeat with, recognising that where we are in the world isn’t necessarily where our heart lies. artBeat takes these two pieces of information across multiple users to calculate an 'average heartbeat' for every country around the world. This 'average heartbeat' is then represented by the speed of each country's animated trace — a faster trace means a faster average heartbeat. This means, that should the CPS go to scale, it could be possible to capture significant events (I.e., football fans watching the World Cup) and show the world at different stages of the day (I.e., as Europe begins to wake up Australia starts to slow down).  
 
@@ -20,8 +25,9 @@ As the Health and Wellbeing team, we wanted to lean into the idea that health is
 
 > The visualisation shows one side of the world as 'busier' than the other to represent the different timezones. While one side of the world slows down, the other speeds up. 
 
+Figure 2: Screenshot of the web-based interface, *artBeat*. 
 <table><tr>
-<td> <img src="https://github.com/Kbuilding/Group-CPS/blob/main/images/visualisation_test.png?raw=true" width="500" height="500" border="10" /></a> </td>
+<td> <img src="https://github.com/Kbuilding/Group-CPS/blob/main/images/visualisation_test.png?raw=true" width="600" height="600" border="10" /></a> </td>
  </tr></table>
 
 # Interacting with the Artwork
