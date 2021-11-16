@@ -57,13 +57,11 @@ Figure 2: Screenshot of the web-based interface, *artBeat*.
 
 Throughout this process we have received support from both staff and students.  At every stage, [Dr Mina Henein](https://github.com/MinaHenein?tab=repositories) has been there to offer help, answer questions, source resources and materials, and most of all, motivate us. We are grateful for his support, guidance and patience over the course of the CPS project. Dr Xuanying Zhu has also been a significant source of information, guidance and support, and she was instrumental in helping us with our AI component, providing code for both the filtering and the normalisation of the data.  
 
-We received a tremendous amount of support from both our tutors, Matthew, Memunat and Zac, who offered incredibly useful advice, particularly around project management, documentation, visualisation and **Git!**
+We received a tremendous amount of support from both our tutors, Matthew, Memunat, Danny and Zac, who offered incredibly useful advice, particularly around project management, documentation, visualisation and **Git!**
 
 We would also like to thank the design panel members, Associate Professor Hanna Kurniawati, Lorenn Ruster, Distinguished Honorary Professor Brendan Traw and Dr Kelly Frame, for your kind words and constructuve comments, many of which served us well when we needed to pivot the prototype's design. 
 
 As for the staff at SoCy more broadly Dr Hannah Feldman and Josh Andres offered new ways of thinking about our CPS, Andrew M and Adrian S helped bring to life our CPS video, Shirley for providing a public facing platform for the prototype and her efforts around organising Demo Day. Paul, for his enthusiam with the Remo platform and the role he has played in our build journey.
-
-If we have forgotten anyone, our apologies, but it does offer insight into the community that we have supporting us that. 
 
 And last, but by no means least, to our cohort. Our heartfelt thanks for being a part of the commiserations (video editing, am I right?) and our celebrations. Thank you for the feedback that you offered, both formally and informally.  
 
