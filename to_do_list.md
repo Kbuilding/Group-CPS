@@ -1,6 +1,6 @@
-- [ ] Compare the preprocessing filters (butterworth + normalisation, butterworth + standardisation, median + normalisation, median + standardisation) 
-- [ ] Pick a filter to use for the preprocessing of the Empatic E4 data.
-- [ ] Document the difference in the data with and without the filter (i.e., images, averages).  
+- [X] Compare the preprocessing filters (butterworth + normalisation, butterworth + standardisation, median + normalisation, median + standardisation) 
+- [X] Pick a filter to use for the preprocessing of the Empatic E4 data.
+- [X] Document the difference in the data with and without the filter (i.e., images, averages).  
 - [ ] Get a value for the heart rate using the filter and send through to James. 
 - [X] Signpost in the P5.js code the timezones for the different countries (i.e., //night (7) or //day (2)). 
 
