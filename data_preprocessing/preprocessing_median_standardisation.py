@@ -1,3 +1,4 @@
+# Dr Xuanying Zhu kindly provided starter code for the data pre-processing, which has been adapted to meet the purposes of our CPS. 
 import pandas as pd 
 import numpy as np 
 from scipy import signal, interpolate
@@ -12,15 +13,15 @@ hr_path = E4_folder + 'HR.csv' # hr_path creates a pathway for the electrodermal
 
 # hr_path = E4_folder + 'HR_XZ.csv' 
 
-hr_df = pd.read_csv(hr_path, header=None) # Ask XY what she means by 'hr_df' (i.e., does 'df' denote data file?) and about header=None. Pandas is used to read the csv file. 
+hr_df = pd.read_csv(hr_path, header=None) # Pandas is used to read the csv file, _df denotes data file 
 
 # hr_df = pd.read_csv(hr_path, header=None)
 
-hr_start_epoch = hr_df[0][0] # Ask Robin about epoch time 
+hr_start_epoch = hr_df[0][0] # set epoch time 
 
-hr_hz = hr_df[0][1] # Ask Robin about sampling rate. 'hz' refers to hertz.
+hr_hz = hr_df[0][1] # set sampling rate, 'hz' refers to hertz.
 
-hr_values = hr_df[0][2:] # Ask Robin about hr recording 
+hr_values = hr_df[0][2:] 
 
 hr_values.index = hr_start_epoch + (hr_values.index - 2) / hr_hz #XZ provided code that could convert hr index to epoch, which she noted would be useful when segmenting hr data by timestamps 
 
