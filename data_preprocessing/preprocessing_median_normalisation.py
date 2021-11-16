@@ -1,3 +1,4 @@
+# Dr Xuanying Zhu kindly provided starter code for the data pre-processing, which has been adapted to meet the purposes of our CPS. 
 import pandas as pd 
 import numpy as np 
 from scipy import signal, interpolate
@@ -12,9 +13,9 @@ hr_path = E4_folder + 'HR.csv' # hr_path creates a pathway for the HR data, noti
 
 hr_df = pd.read_csv(hr_path, header=None) # 'df' denotes data file and Pandas is used to read the csv file. 
 
-hr_start_epoch = hr_df[0][0] # Ask Robin about epoch time 
+hr_start_epoch = hr_df[0][0]  # set epoch time
 
-hr_hz = hr_df[0][1] # Ask Robin about sampling rate. 'hz' refers to hertz.
+hr_hz = hr_df[0][1] # set sampling rate, 'hz' refers to hertz.
 
 hr_values = hr_df[0][2:]
 
@@ -76,7 +77,7 @@ def min_max_normalisation(data): # (x - x.min) / (x.max - x.min)
 
 
 # Scale using min-max normalisation 
-hr_norm = min_max_normalisation(hr_filtered_df['filtered_hr'].values) # not defined
+hr_norm = min_max_normalisation(hr_filtered_df['filtered_hr'].values)
 
 
 # constructs a pandas dataframe for the normalised hr data to be stored
@@ -95,7 +96,7 @@ axs[2].title.set_text('Normalised HR')
 
 # Plot the curves 
 axs[0].plot(hr_values.index, hr_values.values)
-axs[1].plot(hr_filtered_df.index, hr_filtered_median) #hr_filtered_df.index not defined 
+axs[1].plot(hr_filtered_df.index, hr_filtered_median) 
 axs[2].plot(hr_filtered_df.index, hr_filtered_df['scaled_hr'])
 
 # Format the three graphs to ensure that they don't overlap
