@@ -1,3 +1,5 @@
+# Dr Xuanying Zhu kindly provided starter code for the data pre-processing, which has been adapted to meet the purposes of our CPS. 
+
 import pandas as pd 
 import numpy as np 
 from scipy import signal, interpolate
@@ -66,7 +68,7 @@ plt.tight_layout()"""
 "Min-max normalisation & standardisation normalisation" 
 def min_max_normalisation(data): # (x - x.min) / (x.max - x.min)
 
-     x = data.reshape(-1,1) # Create x (reshaped data required by sklearn) - Why does sklearn require reshaped data? What is reshaped data and how is it different to other types of data?
+     x = data.reshape(-1,1) # Create x (reshaped data required by sklearn)
 
      min_max_scaler = preprocessing.MinMaxScaler() # Create a minimum and maximum processor object 
 
